@@ -1,0 +1,16 @@
+{
+  "name": "subgraph",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "codegen:usdt": "graph codegen subgraphs/usdt/usdt.yaml",
+    "build:usdt": "graph build subgraphs/usdt/usdt.yaml",
+    "deploy:usdt": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ nonameb3/eec subgraphs/usdt/usdt.yaml"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.42.2",
+    "@graphprotocol/graph-ts": "^0.29.3",
+    "typescript": "^4.9.5"
+  }
+}

@@ -1,0 +1,33 @@
+type Transfer @entity {
+  id: ID!
+  hash: Bytes!
+  sender: Bytes!
+  receiver: Bytes!
+  amount: BigInt
+  contract: Bytes!
+  gasUsed: BigInt
+  timeStamp: BigInt
+  blockNumber: BigInt
+}
+
+type Block @entity {
+  id: ID!
+  gasUsed: BigInt
+  hash: Bytes!
+  number: BigInt
+  parentHash: Bytes
+  timestamp: BigInt
+}
+
+type Transaction @entity {
+  id: ID!
+  hash: Bytes!
+  index: BigInt
+  from: Bytes
+  to: Bytes
+  value: BigInt
+  gasLimit: BigInt
+  gasPrice: BigInt
+  input: Bytes
+  nounce: BigInt
+}

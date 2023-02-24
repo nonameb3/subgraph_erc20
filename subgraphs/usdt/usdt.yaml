@@ -1,0 +1,27 @@
+specVersion: 0.0.4
+description: Ethereum USDT
+schema:
+  file: ./usdt.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: usdt
+    network: mainnet
+    source:
+      address: '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+      abi: usdt
+      startBlock: 16696816
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ../../src/usdt/index.ts
+      entities:
+        - Transfer
+      abis:
+        - name: usdt
+          file: ../../abis/usdt.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransferEvent
+      
+       
