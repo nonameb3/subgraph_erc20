@@ -1,4 +1,4 @@
-type Transfer @entity {
+type Transfer @entity(immutable: true) {
   id: ID!
   hash: Bytes!
   sender: Bytes!
@@ -10,7 +10,7 @@ type Transfer @entity {
   blockNumber: BigInt
 }
 
-type Block @entity {
+type Block @entity(immutable: true) {
   id: ID!
   gasUsed: BigInt
   hash: Bytes!
@@ -19,7 +19,7 @@ type Block @entity {
   timestamp: BigInt
 }
 
-type Transaction @entity {
+type Transaction @entity(immutable: true) {
   id: ID!
   hash: Bytes!
   index: BigInt
